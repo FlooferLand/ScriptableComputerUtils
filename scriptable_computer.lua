@@ -1,79 +1,75 @@
--- ScriptableComputers & it's API by TheFattestCat & Donyti_Qramixy
+-- ScriptableComputers & API by TheFattestCat & Donyti_Qramixy
 -- API reference file written by FlooferLand
 
--- Check out ScriptableComputers at (https://steamcommunity.com/sharedfiles/filedetails/?id=2821133117)
--- You can use this file to get autocompletion for the mod by importing it using `require`
--- (Additionally, check out my discussion thread at https://steamcommunity.com/workshop/filedetails/discussion/2821133117/3768986428634401869)
 
-
---- get value from register
+--- Get a value from a register
 --- @param name string
---- @returns [number|bool]
+--- @returns number|boolean
 function getreg(name) end
 
---- set value to register
+--- Set a value to a register
 --- @param name string
---- @param value number|bool
+--- @param value number|boolean
 function setreg(name, value) end
 
---- clear all registers
+--- Clear all registers
 function clearregs() end
 
---- returns table of parent computers datas
+--- Returns a table of parent computers
 --- @returns table
 function getParentComputers() end
 
---- returns table of child computers datas
+--- Returns a table of child computers
 --- @returns table
 function getChildComputers() end
 
---- returns table of child displays datas
+--- Returns a table of child displays
 --- @returns table
 function getDisplays() end
 
---- returns table of child motors datas
+--- Returns a table of child motors
 --- @returns table
 function getMotors() end
 
---- returns table of child radars datas
+--- Returns a table of child radars
 --- @returns table
-function getRadars() end 
+function getRadars() end
 
---- returns table of child network ports datas
+--- Returns a table of child network ports
 --- @returns table
 function getPorts() end
 
---- returns table of child discks datas
+--- Returns a table of child discks
 --- @returns table
 function getDisks() end
 
---- performs invokation some code on clients
+--- Invokes some code on all the clients
 --- @param code string
 function clientInvoke(code) end
 
---- input selector (if color specified);
---- returns true if one on selected inputs is true else returns false
+--- Input selector (if a color is specified);
+--- Returns true if one of the selected inputs is true, else returns false
 --- @param color string|nil
 --- @returns bool
 function input(color) end
 
---- if color specified returns table of parent interactable powers;
---- if no color -- returns full table of powers
+--- If a colour is specified it returns a table of parent interactable powers;
+--- If there is no color it returns a full table of powers
 --- @param color string|nil
 --- @returns table[num]
 function ninput(color) end
 
---- set power and active state of self.interactable
+--- Set the power and active state of `self.interactable`
 --- @param value number|boolean
-function out(value) end 
+function out(value) end
 
---- make function from code
+--- Make a Lua function from code
 --- @param code string
 --- @param env table|nil
 --- @return function
 function loadstring(code, env) return (function() end) end
 
---- execute string code
+--- Execute some Lua code from a string
 --- @param code string
 --- @param env table|nil
 function execute(code, env) end
