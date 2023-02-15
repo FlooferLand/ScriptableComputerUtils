@@ -14,3 +14,10 @@ select all, and copy paste it into a new file with the same name as the reposito
   PS: I personally recommend you use [Sumneko's Lua extension](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) for VSCode,
   however, you should be able to use it regardless of IDE or extension.
 - You can download my custom script template [here](./Better%20script%20template/script.lua)!<br/>
+
+### License
+__My API reference file is licensed under MIT!__ <br/>
+You only have to credit me if you're redistributing the file. <br/>
+If you use it in a mod and you don't want to credit me just make sure not to include it when packaging the mod. <br/>
+
+Feel free to open up an issue if you want to discuss licensing.
