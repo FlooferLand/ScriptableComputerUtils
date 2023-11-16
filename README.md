@@ -1,10 +1,11 @@
 # Scriptable Computer Utils
 Autocompletion and tools for the Scrap Mechanic [ScriptableComputer](https://steamcommunity.com/sharedfiles/filedetails/?id=2821133117) mod!
 
-### /!\ Note /!\
-Things may be outdated.
-I do not regularly check out `ScriptableComputers`, or play Scrap Mechanic
-If you want anything fixed/updated please [open an Issue](https://github.com/FlooferLand/ScriptableComputerUtils/issues), or a Pull Request if you wish to fix it yourself!
+### ⚠️ Note ⚠️
+Things may be slightly outdated. I do not regularly check out `ScriptableComputers` or play Scrap Mechanic anymore. <br/>
+If you want anything fixed/updated please [open up an Issue](https://github.com/FlooferLand/ScriptableComputerUtils/issues). If you want to fix it yourself, open up a Pull Request!
+<br/>
+If you have any questions, also [open up an Issue!](https://github.com/FlooferLand/ScriptableComputerUtils/issues)
 
 ### - What is this?
 Ive made this repository as the mod lacks any support for autocompletion by it's devs, so this should help! <br/>
