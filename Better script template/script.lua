@@ -1,4 +1,5 @@
 require "scriptable_computers"
+---@diagnostic disable: lowercase-global
 
 if STARTED ~= nil then
 	if input() then
