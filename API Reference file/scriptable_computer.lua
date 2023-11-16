@@ -1,5 +1,5 @@
 --- @copyright FlooferLand, TheFattestCat, Donyti_Qramixy
--- This API reference file is under the MIT license, FlooferLand@2023 - Credit if redistributing!
+-- This API reference file is under the MIT license, FlooferLand @ 2023 - Credit if redistributing!
 -- ScriptableComputer's API does not fall under my copyright.
 -- You don't need to credit me in your mods/creations if you use my tools! Though it would be appreciated! c:
 
@@ -8,29 +8,136 @@
 -- API reference file written by FlooferLand
 ----------------------------------------------------------------
 
--- This API reference file is still being updated from time to time.
--- Some things might not have documentation or might be included in
--- Feel free to open up an `Issue` on my project's Github!
+-- This API reference file may be updated from time to time, and things may be outdated
+-- I do not regularly check out ScriptableComputers, or play Scrap Mechanic
+-- If you want anything fixed/updated please open an Issue or a Pull Request!
 
 -- **DO NOT** bother the developers of the ScriptableComputer mod
 --   - They're not the ones maintaining this API reference file.
 --   - Open up an issue on this project's GitHub instead!
 -- https://github.com/FlooferLand/ScriptableComputerUtils/issues
 
--- /!\ Some functions might return something /!\
+-- /!\ Some functions might return placeholder values /!\
 -- This is so it won't provide a warning regarding return types in your IDE
 -- Do NOT expect to be able to test the functions outside the game
 -- This project only contains documentation and autocompletion
+----------------------------------------------
 
-----------------------------------------------
--- Some maybe-useful info about their API is
--- also available on my project's Github:
--- https://github.com/FlooferLand/ScriptableComputerUtils
-----------------------------------------------
+---@diagnostic disable: lowercase-global
+
+-- -- These are all built into Lua
+-- function print(text)
+-- function debug(text)
+-- function tostring(value)
+-- function type(value)
+-- function assert(bool, msg)
+-- function error(msg, level)
+-- function pairs(table)
+-- function ipairs(table)
+-- function next(table, index)
+-- function pcall(f, ...)
+-- function xpcall(f, err)
+-- self
+-- function select(index, ...)
+-- global
+
+--- Get a value from a register
+--- @param name string
+--- @return number|boolean
+function getreg(name) return(0) end
+
+--- Set a value to a register
+--- @param name string
+--- @param value number|boolean
+function setreg(name, value) end
+
+--- Clear all registers
+function clearregs() end
+
+--- Returns a table of parent computers
+--- @return table
+function getParentComputers() return({}) end
+
+--- Returns a table of child computers
+--- @return table
+function getChildComputers() return({}) end
+
+--- Returns a table of child displays
+--- @return table[Display]
+function getDisplays() return({}) end
+
+--- Returns a table of child motors
+--- @return table[StepperMotor]
+function getMotors() return({}) end
+
+--- Returns a table of child radars
+--- @return table[StepperMotor]
+function getRadars() return({}) end
+
+--- Returns a table of child network ports
+--- @return table
+function getPorts() return({}) end
+
+--- Returns a table of child disks
+--- @return table
+function getDisks() return({}) end
+
+--- Invokes some code on all the clients
+--- @param code string
+function clientInvoke(code) end
+
+--- Input selector (if a color is specified);
+--- Returns true if one of the selected inputs is true, else returns false
+--- @param color string|nil
+--- @return boolean
+function input(color) return(false) end
+
+--- If a colour is specified it returns a table of parent interactable powers;
+--- If there is no color it returns a full table of powers
+--- @param color string|nil
+--- @return table[number]
+function ninput(color) return({0}) end
+
+-- TODO: Evaluate if this is a number, or an integer
+--- Set the power and active state of `self.interactable`
+--- @param value number|boolean
+function out(value) end
+
+--- Make a Lua function from code
+--- @param code string
+--- @param env table|nil
+--- @return function
+function loadstring(code, env) return (function() end) end
+
+--- Execute some Lua code from a string
+--- @param code string
+--- @param env table|nil
+function execute(code, env) end
+
+
+--- Deprecated, use `getParentComputers` instead
+--- @deprecated
+function getParentComputersData() end
+
+--- Deprecated, use `getChildComputers` instead
+--- @deprecated
+function getChildComputersData() end
+
+--- Deprecated, use `getDisplays` instead
+--- @deprecated
+function getConnectedDisplaysData() end
+
+--- Deprecated, use `getMotors` instead
+--- @deprecated
+function getConnectedMotorsData() end
+
+--- Deprecated, use `getRadars` instead
+--- @deprecated
+function getConnectedRadarsData() end
+
 
 --- The Display data structure.
 Display = {
-
 	--- Gets the width of the display
 	--- @return integer
 	getWidth = function() return(0) end,
@@ -327,93 +434,3 @@ RaycastingCamera = {
 	--- `Original description:`  resets that pixel to 0
 	resetCounter = function() end
 }
-
-
---- Get a value from a register
---- @param name string
---- @return number|boolean
-function getreg(name) return(0) end
-
---- Set a value to a register
---- @param name string
---- @param value number|boolean
-function setreg(name, value) end
-
---- Clear all registers
-function clearregs() end
-
---- Returns a table of parent computers
---- @return table
-function getParentComputers() return({}) end
-
---- Returns a table of child computers
---- @return table
-function getChildComputers() return({}) end
-
---- Returns a table of child displays
---- @return table[Display]
-function getDisplays() return({}) end
-
---- Returns a table of child motors
---- @return table[StepperMotor]
-function getMotors() return({}) end
-
---- Returns a table of child radars
---- @return table[StepperMotor]
-function getRadars() return({}) end
-
---- Returns a table of child network ports
---- @return table
-function getPorts() return({}) end
-
---- Returns a table of child disks
---- @return table
-function getDisks() return({}) end
-
---- Invokes some code on all the clients
---- @param code string
-function clientInvoke(code) end
-
---- Input selector (if a color is specified);
---- Returns true if one of the selected inputs is true, else returns false
---- @param color string|nil
---- @return boolean
-function input(color) return(false) end
-
---- If a colour is specified it returns a table of parent interactable powers;
---- If there is no color it returns a full table of powers
---- @param color string|nil
---- @return table[number]
-function ninput(color) return({0}) end
-
--- TODO: Evaluate if this is a number, or an integer
---- Set the power and active state of `self.interactable`
---- @param value number|boolean
-function out(value) end
-
---- Make a Lua function from code
---- @param code string
---- @param env table|nil
---- @return function
-function loadstring(code, env) return (function() end) end
-
---- Execute some Lua code from a string
---- @param code string
---- @param env table|nil
-function execute(code, env) end
-
-
--- --- deprecated, use getParentComputers
--- function getParentComputersData() end
-
--- --- deprecated, use getChildComputers
--- function getChildComputersData() end
-
--- --- deprecated, use getDisplays
--- function getConnectedDisplaysData() end
-
--- --- deprecated, use getMotors
--- function getConnectedMotorsData() end
-
--- --- deprecated, use getRadars
--- function getConnectedRadarsData() end
